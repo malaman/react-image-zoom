@@ -15,22 +15,23 @@
             }
 
             componentDidMount() {
+                this.imageZoom = new ImageZoom(this.refs.container, {...this.props})
             }
 
             componentWillUnmount() {
+                this.imageZoom.kill();
+                this.imageZoom = void 0;
             }
-            shouldComponentUpdate() {
-                return false;
-            }
+
             render() {
                 return (
-                        <div>
-                            <p>Boilerplate</p>
-                        </div>
+                    <div ref='container'>
+                    </div>
                 );
             }
         };
-        ReactDOM.render(React.createElement(ReactImageZoom), document.getElementById('react-app'));
+        const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg"};
+        ReactDOM.render(React.createElement(ReactImageZoom, {...props}), document.getElementById('react-app'));
     </script>
     </head>
 <body>
