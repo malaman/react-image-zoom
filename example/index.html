@@ -1,40 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-    <script src="https://fb.me/react-0.14.7.js"></script>
-    <script src="https://fb.me/react-dom-0.14.7.js"></script>
-    <script src="../../js-image-zoom/js-image-zoom.js" type="application/javascript"></script>
-    <script type="text/babel">
-        class ReactImageZoom extends React.Component {
-            constructor(props) {
-                super(props);
-                this.state = {};
-            }
 
-            componentDidMount() {
-                this.imageZoom = new ImageZoom(this.refs.container, {...this.props})
-            }
-
-            componentWillUnmount() {
-                this.imageZoom.kill();
-                this.imageZoom = void 0;
-            }
-
-            render() {
-                return (
-                    <div ref='container'>
-                    </div>
-                );
-            }
-        };
-        const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg"};
-        ReactDOM.render(React.createElement(ReactImageZoom, {...props}), document.getElementById('react-app'));
-    </script>
     </head>
 <body>
     <div id="react-app"></div>
+    <script src="./bundle.min.js"></script>
 </body>
 </html>
