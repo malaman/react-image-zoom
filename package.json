@@ -1,16 +1,16 @@
 {
   "name": "react-image-zoom",
   "version": "0.0.1",
-  "description": "",
+  "description": "react based image zoomer on mouse hover",
   "homepage": "https://github.com/malaman/react-image-zoom",
   "repository": {
     "type": "git",
-    "url": "https://github.com/malaman/react-image-zoom"
+    "url": "git+https://github.com/malaman/react-image-zoom.git"
   },
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "js-image-zoom": "malaman/js-image-zoom#master"
+    "js-image-zoom": "github:malaman/js-image-zoom#master"
   },
   "devDependencies": {
     "ava": "^0.13.0",
@@ -48,5 +48,17 @@
     "build-babel": "babel ./src/react-image-zoom.js --out-file index.js",
     "lint": "eslint ./src",
     "lint-dev": "eslint --fix ./src"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/malaman/react-image-zoom/issues"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "react",
+    "image",
+    "zoom"
+  ],
+  "author": "Andrii Malaman <and.malaman@gmail.com>"
 }
