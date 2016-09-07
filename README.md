@@ -31,3 +31,10 @@ ReactDOM.render(<ReactImageZoom {...props} />, document.getElementById('react-ap
 - **height** (number) - height of the source image
 - **zoomWidth** (number) - width of the zoomed image. Zoomed image height equals source image height
 - **img** (string) - url of the source image
+
+##RouteMap
+
+- [ ] offset property - offset in pixels between original image and zoomed image
+
+- [ ] add scale property
+
