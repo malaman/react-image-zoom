@@ -1,72 +1,18 @@
-'use strict';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import ReactImageZoom from '../src/react-image-zoom';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+class ReactImageZoomExample extends Component {
+    render() {
+        const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg", offset: {vertical: 0, horizontal: 10}};
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _jsImageZoom = require('js-image-zoom');
-
-var _jsImageZoom2 = _interopRequireDefault(_jsImageZoom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ReactImageZoom = function (_React$Component) {
-    _inherits(ReactImageZoom, _React$Component);
-
-    function ReactImageZoom() {
-        _classCallCheck(this, ReactImageZoom);
-
-        return _possibleConstructorReturn(this, (ReactImageZoom.__proto__ || Object.getPrototypeOf(ReactImageZoom)).apply(this, arguments));
+        return (
+            <div>
+                <h2>{`props: ${JSON.stringify(props)}`}</h2>
+                <ReactImageZoom {...props} />;
+            </div>
+        )
     }
+}
 
-    _createClass(ReactImageZoom, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.imageZoom = new _jsImageZoom2.default(this.refs.container, this.props);
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            this.imageZoom.kill();
-            this.imageZoom = void 0;
-        }
-    }, {
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(nextProps) {
-            if (this.props.img !== nextProps.img) {
-                this.imageZoom.kill();
-                this.imageZoom = new _jsImageZoom2.default(this.refs.container, nextProps);
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement('div', { ref: 'container' });
-        }
-    }]);
-
-    return ReactImageZoom;
-}(_react2.default.Component);
-
-ReactImageZoom.propTypes = {
-    img: _react.PropTypes.string.isRequired,
-    height: _react.PropTypes.number.isRequired,
-    width: _react.PropTypes.number.isRequired,
-    zoomWidth: _react.PropTypes.number,
-    scale: _react.PropTypes.number,
-    offset: _react.PropTypes.object
-};
-exports.default = ReactImageZoom;
-module.exports = exports['default'];
+ReactDOM.render( React.createElement(ReactImageZoomExample), document.getElementById('react-app'));
