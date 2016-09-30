@@ -1,15 +1,18 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PropTypes} from 'react';
 import ImageZoom from 'js-image-zoom';
 
-class ReactImageZoom extends Component {
+class ReactImageZoom extends React.Component {
     static propTypes = {
         img: PropTypes.string.isRequired,
         height: PropTypes.number.isRequired,
-        width: PropTypes.number.isRequired
+        width: PropTypes.number.isRequired,
+        zoomWidth: PropTypes.number,
+        scale: PropTypes.number,
+        offset: PropTypes.object,
     };
 
     componentDidMount() {
-        this.imageZoom = new ImageZoom(this.refs.container, this.props)
+        this.imageZoom = new ImageZoom(this.refs.container, this.props);
     }
 
     componentWillUnmount() {
@@ -17,8 +20,16 @@ class ReactImageZoom extends Component {
         this.imageZoom = void 0;
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (this.props.img !== nextProps.img) {
+            this.imageZoom.kill();
+            this.imageZoom = new ImageZoom(this.refs.container, nextProps);
+        }
+    }
+
+
     render() {
-        return <div ref='container' />
+        return <div ref='container' />;
     }
 }
 

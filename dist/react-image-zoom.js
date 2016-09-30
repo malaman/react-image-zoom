@@ -78,13 +78,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ReactImageZoom = function (_Component) {
-	    _inherits(ReactImageZoom, _Component);
+	var ReactImageZoom = function (_React$Component) {
+	    _inherits(ReactImageZoom, _React$Component);
 
 	    function ReactImageZoom() {
 	        _classCallCheck(this, ReactImageZoom);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ReactImageZoom).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (ReactImageZoom.__proto__ || Object.getPrototypeOf(ReactImageZoom)).apply(this, arguments));
 	    }
 
 	    _createClass(ReactImageZoom, [{
@@ -99,21 +99,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.imageZoom = void 0;
 	        }
 	    }, {
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            if (this.props.img !== nextProps.img) {
+	                this.imageZoom.kill();
+	                this.imageZoom = new _jsImageZoom2.default(this.refs.container, nextProps);
+	            }
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return ReactDOM.render('div', { id: 'container' });
+	            return _react2.default.createElement('div', { ref: 'container' });
 	        }
 	    }]);
 
 	    return ReactImageZoom;
-	}(_react.Component);
+	}(_react2.default.Component);
 
 	ReactImageZoom.propTypes = {
 	    img: _react.PropTypes.string.isRequired,
 	    height: _react.PropTypes.number.isRequired,
-	    width: _react.PropTypes.number.isRequired
+	    width: _react.PropTypes.number.isRequired,
+	    zoomWidth: _react.PropTypes.number,
+	    scale: _react.PropTypes.number,
+	    offset: _react.PropTypes.object
 	};
-
 	exports.default = ReactImageZoom;
 	module.exports = exports['default'];
 
