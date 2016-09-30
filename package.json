@@ -10,7 +10,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "js-image-zoom": "0.0.2"
+    "js-image-zoom": "0.1.0"
   },
   "devDependencies": {
     "ava": "^0.13.0",
