@@ -1,6 +1,6 @@
 {
   "name": "react-image-zoom",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "react based image zoomer on mouse hover",
   "homepage": "https://github.com/malaman/react-image-zoom",
   "repository": {
@@ -10,7 +10,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "js-image-zoom": "0.1.0"
+    "js-image-zoom": "^0.1.2"
   },
   "devDependencies": {
     "ava": "^0.13.0",
