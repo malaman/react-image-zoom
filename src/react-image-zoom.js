@@ -9,6 +9,7 @@ class ReactImageZoom extends React.Component {
         zoomWidth: PropTypes.number,
         scale: PropTypes.number,
         offset: PropTypes.object,
+        zoomStyle: PropTypes.string,
     };
 
     componentDidMount() {
@@ -26,7 +27,6 @@ class ReactImageZoom extends React.Component {
             this.imageZoom = new ImageZoom(this.refs.container, nextProps);
         }
     }
-
 
     render() {
         return <div ref='container' />;

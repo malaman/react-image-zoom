@@ -66,7 +66,8 @@ ReactImageZoom.propTypes = {
     width: _react.PropTypes.number.isRequired,
     zoomWidth: _react.PropTypes.number,
     scale: _react.PropTypes.number,
-    offset: _react.PropTypes.object
+    offset: _react.PropTypes.object,
+    zoomStyle: _react.PropTypes.string
 };
 exports.default = ReactImageZoom;
 module.exports = exports['default'];

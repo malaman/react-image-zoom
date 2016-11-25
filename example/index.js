@@ -5,7 +5,6 @@ import ReactImageZoom from '../src/react-image-zoom';
 class ReactImageZoomExample extends Component {
     render() {
         const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg", offset: {vertical: 0, horizontal: 10}};
-
         return (
             <div>
                 <h2>{`props: ${JSON.stringify(props)}`}</h2>

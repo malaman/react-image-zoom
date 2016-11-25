@@ -1,6 +1,6 @@
 {
   "name": "react-image-zoom",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "react based image zoomer on mouse hover",
   "homepage": "https://github.com/malaman/react-image-zoom",
   "repository": {
@@ -10,7 +10,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "js-image-zoom": "^0.1.2"
+    "js-image-zoom": "^0.2.0"
   },
   "devDependencies": {
     "ava": "^0.13.0",
@@ -58,7 +58,25 @@
   "keywords": [
     "react",
     "image",
-    "zoom"
+    "zoom",
+    "image magnifier",
+    "image enlarger",
+    "image lens",
+    "photo zoom",
+    "photo magnifier",
+    "photo enlarger",
+    "photo lens",
+    "image zoom",
+    "image magnifier",
+    "image enlarger",
+    "photo zoom",
+    "photo magnifier",
+    "photo enlarger",
+    "zoom",
+    "magnify",
+    "enlarge",
+    "react-image-zoom",
+    "react-photo-zoom"
   ],
   "author": "Andrii Malaman <and.malaman@gmail.com>"
 }
