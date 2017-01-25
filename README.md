@@ -1,5 +1,7 @@
 # react-image-zoom
 
+ [![NPM Download Stats](https://nodei.co/npm/react-image-zoom.png?downloads=true)](https://www.npmjs.com/package/react-image-zoom)
+ 
 ##Overview
 
 React component for desktop browsers for image zoom on mouse hover.
