@@ -46,9 +46,19 @@ var ReactImageZoom = function (_React$Component) {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
             if (this.props.img !== nextProps.img) {
-                this.imageZoom.kill();
+                this.kill();
                 this.imageZoom = new _jsImageZoom2.default(this.refs.container, nextProps);
             }
+        }
+    }, {
+        key: 'setup',
+        value: function setup() {
+            this.imageZoom.setup();
+        }
+    }, {
+        key: 'kill',
+        value: function kill() {
+            this.imageZoom.kill();
         }
     }, {
         key: 'render',

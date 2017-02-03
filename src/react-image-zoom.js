@@ -23,10 +23,19 @@ class ReactImageZoom extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (this.props.img !== nextProps.img) {
-            this.imageZoom.kill();
+            this.kill();
             this.imageZoom = new ImageZoom(this.refs.container, nextProps);
         }
     }
+
+    setup() {
+        this.imageZoom.setup();
+    }
+
+    kill() {
+        this.imageZoom.kill();
+    }
+
 
     render() {
         return <div ref='container' />;

@@ -32,9 +32,11 @@
     "eslint-config-airbnb": "^6.2.0",
     "eslint-loader": "^1.3.0",
     "eslint-plugin-react": "^4.2.3",
+    "jest": "^18.1.0",
     "mocha": "^2.4.5",
-    "react": "^15.2.0",
-    "react-dom": "^15.2.0",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-test-renderer": "^15.4.2",
     "sinon": "^1.17.3",
     "uglify-js": "^2.6.2",
     "webpack": "^1.12.14",
@@ -47,7 +49,8 @@
     "build-example": "browserify ./example/index.js -t [ babelify --presets [ es2015 stage-0 react ] --plugins [ transform-object-assign ] ] | uglifyjs -cm > ./example/bundle.min.js",
     "build-babel": "babel ./src/react-image-zoom.js --out-file index.js",
     "lint": "eslint ./src",
-    "lint-dev": "eslint --fix ./src"
+    "lint-dev": "eslint --fix ./src",
+    "test": "jest test"
   },
   "bugs": {
     "url": "https://github.com/malaman/react-image-zoom/issues"
