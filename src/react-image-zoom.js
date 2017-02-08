@@ -12,8 +12,14 @@ class ReactImageZoom extends React.Component {
         zoomStyle: PropTypes.string,
     };
 
+    constructor(props) {
+        super(props);
+        this.container = undefined;
+        this.getRef = this.getRef.bind(this);
+    }
+
     componentDidMount() {
-        this.imageZoom = new ImageZoom(this.refs.container, this.props);
+        this.imageZoom = new ImageZoom(this.container, this.props);
     }
 
     componentWillUnmount() {
@@ -24,7 +30,7 @@ class ReactImageZoom extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (this.props.img !== nextProps.img) {
             this.kill();
-            this.imageZoom = new ImageZoom(this.refs.container, nextProps);
+            this.imageZoom = new ImageZoom(this.container, nextProps);
         }
     }
 
@@ -36,9 +42,13 @@ class ReactImageZoom extends React.Component {
         this.imageZoom.kill();
     }
 
+    getRef(ref) {
+        this.container = ref;
+    }
+
 
     render() {
-        return <div ref='container' />;
+        return <div ref={this.getRef} />;
     }
 }
 

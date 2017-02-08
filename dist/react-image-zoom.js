@@ -81,16 +81,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	var ReactImageZoom = function (_React$Component) {
 	    _inherits(ReactImageZoom, _React$Component);
 
-	    function ReactImageZoom() {
+	    function ReactImageZoom(props) {
 	        _classCallCheck(this, ReactImageZoom);
 
-	        return _possibleConstructorReturn(this, (ReactImageZoom.__proto__ || Object.getPrototypeOf(ReactImageZoom)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (ReactImageZoom.__proto__ || Object.getPrototypeOf(ReactImageZoom)).call(this, props));
+
+	        _this.container = undefined;
+	        _this.getRef = _this.getRef.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(ReactImageZoom, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            this.imageZoom = new _jsImageZoom2.default(this.refs.container, this.props);
+	            this.imageZoom = new _jsImageZoom2.default(this.container, this.props);
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
@@ -103,7 +107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        value: function componentWillReceiveProps(nextProps) {
 	            if (this.props.img !== nextProps.img) {
 	                this.kill();
-	                this.imageZoom = new _jsImageZoom2.default(this.refs.container, nextProps);
+	                this.imageZoom = new _jsImageZoom2.default(this.container, nextProps);
 	            }
 	        }
 	    }, {
@@ -117,9 +121,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.imageZoom.kill();
 	        }
 	    }, {
+	        key: 'getRef',
+	        value: function getRef(ref) {
+	            this.container = ref;
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement('div', { ref: 'container' });
+	            return _react2.default.createElement('div', { ref: this.getRef });
 	        }
 	    }]);
 
