@@ -2,21 +2,21 @@
 
  [![NPM Download Stats](https://nodei.co/npm/react-image-zoom.png?downloads=true)](https://www.npmjs.com/package/react-image-zoom)
  
-##Overview
+## Overview
 
 React component for desktop browsers for image zoom on mouse hover.
 
-##Demo
+## Demo
 
 [Demo](http://malaman.github.io/react-image-zoom/index.html)
 
-##Install
+## Install
 
 ```
 npm install react-image-zoom --save
 ```
 
-##Usage
+## Usage
 
 ```javascript
 import React from 'react';
@@ -27,7 +27,7 @@ const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg"};
 ReactDOM.render(<ReactImageZoom {...props} />, document.getElementById('react-app'));
 ```
 
-##propTypes
+## propTypes
 
 - **width** (number) - width of the source image(required)
 - **height** (number) - height of the source image(required)
@@ -37,6 +37,6 @@ ReactDOM.render(<ReactImageZoom {...props} />, document.getElementById('react-ap
 - **offset** (object) - {vertical: number, horizontal: number}. Zoomed image offset (optional)
 * **zoomStyle** (string) - custom style applied to the zoomed image (i.e. 'opacity: 0.1;background-color: white;')
 
-##RouteMap
+## RouteMap
 
 - [ ] improve example
