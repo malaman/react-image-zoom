@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _jsImageZoom = require('js-image-zoom');
 
 var _jsImageZoom2 = _interopRequireDefault(_jsImageZoom);
@@ -80,13 +84,13 @@ var ReactImageZoom = function (_React$Component) {
 }(_react2.default.Component);
 
 ReactImageZoom.propTypes = {
-    img: _react.PropTypes.string.isRequired,
-    height: _react.PropTypes.number.isRequired,
-    width: _react.PropTypes.number.isRequired,
-    zoomWidth: _react.PropTypes.number,
-    scale: _react.PropTypes.number,
-    offset: _react.PropTypes.object,
-    zoomStyle: _react.PropTypes.string
+    img: _propTypes2.default.string.isRequired,
+    height: _propTypes2.default.number.isRequired,
+    width: _propTypes2.default.number.isRequired,
+    zoomWidth: _propTypes2.default.number,
+    scale: _propTypes2.default.number,
+    offset: _propTypes2.default.object,
+    zoomStyle: _propTypes2.default.string
 };
 exports.default = ReactImageZoom;
 module.exports = exports['default'];
