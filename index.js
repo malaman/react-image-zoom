@@ -53,7 +53,7 @@ var ReactImageZoom = function (_React$Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
-            if (this.props.img !== nextProps.img) {
+            if (this.props !== nextProps) {
                 this.kill();
                 this.imageZoom = new _jsImageZoom2.default(this.container, nextProps);
             }
@@ -84,9 +84,9 @@ var ReactImageZoom = function (_React$Component) {
 }(_react2.default.Component);
 
 ReactImageZoom.propTypes = {
-    img: _propTypes2.default.string.isRequired,
-    height: _propTypes2.default.number.isRequired,
     width: _propTypes2.default.number.isRequired,
+    img: _propTypes2.default.string,
+    height: _propTypes2.default.number,
     zoomWidth: _propTypes2.default.number,
     scale: _propTypes2.default.number,
     offset: _propTypes2.default.object,
