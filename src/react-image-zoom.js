@@ -11,6 +11,7 @@ class ReactImageZoom extends React.Component {
         scale: PropTypes.number,
         offset: PropTypes.object,
         zoomStyle: PropTypes.string,
+        zoomLensStyle: PropTypes.string,
     };
 
     constructor(props) {

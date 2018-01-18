@@ -27,6 +27,16 @@ const props3 = {
 };
 
 
+const props4 = {
+    width: 400,
+    height: 250,
+    zoomWidth: 500,
+    img: '1.jpg',
+    offset: {vertical: 0, horizontal: 10},
+    zoomLensStyle: 'opacity: 0.5;background-color: gray;',
+};
+
+
 class ReactImageZoomExample extends Component {
     constructor(props) {
         super(props);
@@ -56,6 +66,9 @@ class ReactImageZoomExample extends Component {
                         </button>
                         <button onClick={this.setZoomProps(props3)} style={{marginRight: 10}}>
                             props3
+                        </button>
+                        <button onClick={this.setZoomProps(props4)} style={{marginRight: 10}}>
+                            props4
                         </button>
                     </div>
                     <ReactImageZoom ref={this.getZoomRef} {...this.state.zoomProps} />

@@ -146,7 +146,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    zoomWidth: _propTypes2.default.number,
 	    scale: _propTypes2.default.number,
 	    offset: _propTypes2.default.object,
-	    zoomStyle: _propTypes2.default.string
+	    zoomStyle: _propTypes2.default.string,
+	    zoomLensStyle: _propTypes2.default.string
 	};
 	exports.default = ReactImageZoom;
 	module.exports = exports['default'];

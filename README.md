@@ -35,7 +35,9 @@ height is used (optional).
 - **scale** (number) - zoom scale. if not provided, scale is calculated as natural image size / image size, provided in params (optional if zoomWidth param is provided)
 - **offset** (object) - {vertical: number, horizontal: number}. Zoomed image offset (optional)
 * **zoomStyle** (string) - custom style applied to the zoomed image (i.e. 'opacity: 0.1;background-color: white;')(optional)
+* **zoomLensStyle** (string) custom style applied to to zoom lents (i.e. 'opacity: 0.4;background-color: gray;')
+
 
 ## RouteMap
 
-- [ ] add zoomLensStyle property with custom zoomLens styles
+- [ ] add sourceImg, zoomedImg properties to make it possible to use different images for source and zoomed images
