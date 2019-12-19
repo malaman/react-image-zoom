@@ -49,7 +49,7 @@ class ReactImageZoomExample extends Component {
     getZoomRef = (ref) => { this.zoomRef = ref; };
 
     setZoomProps = (props) => () => {
-        this.setState({zoomProps: props});
+        this.setState({zoomProps: JSON.parse(JSON.stringify(props))});
     };
 
     render() {

@@ -3,54 +3,58 @@ import PropTypes from 'prop-types';
 import ImageZoom from 'js-image-zoom';
 
 class ReactImageZoom extends React.Component {
-    static propTypes = {
-        width: PropTypes.number.isRequired,
-        img: PropTypes.string,
-        height: PropTypes.number,
-        zoomWidth: PropTypes.number,
-        scale: PropTypes.number,
-        offset: PropTypes.object,
-        zoomStyle: PropTypes.string,
-        zoomLensStyle: PropTypes.string,
-    };
+  constructor(props) {
+    super(props);
+    this.container = undefined;
+    this.getRef = this.getRef.bind(this);
+  }
 
-    constructor(props) {
-        super(props);
-        this.container = undefined;
-        this.getRef = this.getRef.bind(this);
-    }
+  componentDidMount() {
+    this.rerenderImageZoom(this.props);
+  }
 
-    componentDidMount() {
-        this.imageZoom = new ImageZoom(this.container, this.props);
-    }
+  UNSAFE_componentWillUnmount() {
+    this.imageZoom.kill();
+    this.imageZoom = void 0;
+  }
 
-    componentWillUnmount() {
-        this.imageZoom.kill();
-        this.imageZoom = void 0;
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (this.props !== nextProps) {
+      this.kill();
+      this.rerenderImageZoom(nextProps);
     }
+  }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props !== nextProps) {
-            this.kill();
-            this.imageZoom = new ImageZoom(this.container, nextProps);
-        }
-    }
+  rerenderImageZoom(props) {
+    this.imageZoom = new ImageZoom(this.container, JSON.parse(JSON.stringify(props)));
+  }
 
-    setup() {
-        this.imageZoom.setup();
-    }
+  setup() {
+    this.imageZoom.setup();
+  }
 
-    kill() {
-        this.imageZoom.kill();
-    }
+  kill() {
+    this.imageZoom.kill();
+  }
 
-    getRef(ref) {
-        this.container = ref;
-    }
+  getRef(ref) {
+    this.container = ref;
+  }
 
-    render() {
-        return <div ref={this.getRef} />;
-    }
+  render() {
+    return <div ref={this.getRef}/>;
+  }
 }
+
+ReactImageZoom.propTypes = {
+  width: PropTypes.number.isRequired,
+  img: PropTypes.string,
+  height: PropTypes.number,
+  zoomWidth: PropTypes.number,
+  scale: PropTypes.number,
+  offset: PropTypes.object,
+  zoomStyle: PropTypes.string,
+  zoomLensStyle: PropTypes.string,
+};
 
 export default ReactImageZoom;

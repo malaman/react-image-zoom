@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27,71 +27,77 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var ReactImageZoom = function (_React$Component) {
-    _inherits(ReactImageZoom, _React$Component);
+  _inherits(ReactImageZoom, _React$Component);
 
-    function ReactImageZoom(props) {
-        _classCallCheck(this, ReactImageZoom);
+  function ReactImageZoom(props) {
+    _classCallCheck(this, ReactImageZoom);
 
-        var _this = _possibleConstructorReturn(this, (ReactImageZoom.__proto__ || Object.getPrototypeOf(ReactImageZoom)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ReactImageZoom.__proto__ || Object.getPrototypeOf(ReactImageZoom)).call(this, props));
 
-        _this.container = undefined;
-        _this.getRef = _this.getRef.bind(_this);
-        return _this;
+    _this.container = undefined;
+    _this.getRef = _this.getRef.bind(_this);
+    return _this;
+  }
+
+  _createClass(ReactImageZoom, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.rerenderImageZoom(this.props);
     }
+  }, {
+    key: 'UNSAFE_componentWillUnmount',
+    value: function UNSAFE_componentWillUnmount() {
+      this.imageZoom.kill();
+      this.imageZoom = void 0;
+    }
+  }, {
+    key: 'UNSAFE_componentWillReceiveProps',
+    value: function UNSAFE_componentWillReceiveProps(nextProps) {
+      if (this.props !== nextProps) {
+        this.kill();
+        this.rerenderImageZoom(nextProps);
+      }
+    }
+  }, {
+    key: 'rerenderImageZoom',
+    value: function rerenderImageZoom(props) {
+      this.imageZoom = new _jsImageZoom2.default(this.container, JSON.parse(JSON.stringify(props)));
+    }
+  }, {
+    key: 'setup',
+    value: function setup() {
+      this.imageZoom.setup();
+    }
+  }, {
+    key: 'kill',
+    value: function kill() {
+      this.imageZoom.kill();
+    }
+  }, {
+    key: 'getRef',
+    value: function getRef(ref) {
+      this.container = ref;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement('div', { ref: this.getRef });
+    }
+  }]);
 
-    _createClass(ReactImageZoom, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.imageZoom = new _jsImageZoom2.default(this.container, this.props);
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            this.imageZoom.kill();
-            this.imageZoom = void 0;
-        }
-    }, {
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(nextProps) {
-            if (this.props !== nextProps) {
-                this.kill();
-                this.imageZoom = new _jsImageZoom2.default(this.container, nextProps);
-            }
-        }
-    }, {
-        key: 'setup',
-        value: function setup() {
-            this.imageZoom.setup();
-        }
-    }, {
-        key: 'kill',
-        value: function kill() {
-            this.imageZoom.kill();
-        }
-    }, {
-        key: 'getRef',
-        value: function getRef(ref) {
-            this.container = ref;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement('div', { ref: this.getRef });
-        }
-    }]);
-
-    return ReactImageZoom;
+  return ReactImageZoom;
 }(_react2.default.Component);
 
 ReactImageZoom.propTypes = {
-    width: _propTypes2.default.number.isRequired,
-    img: _propTypes2.default.string,
-    height: _propTypes2.default.number,
-    zoomWidth: _propTypes2.default.number,
-    scale: _propTypes2.default.number,
-    offset: _propTypes2.default.object,
-    zoomStyle: _propTypes2.default.string,
-    zoomLensStyle: _propTypes2.default.string
+  width: _propTypes2.default.number.isRequired,
+  img: _propTypes2.default.string,
+  height: _propTypes2.default.number,
+  zoomWidth: _propTypes2.default.number,
+  scale: _propTypes2.default.number,
+  offset: _propTypes2.default.object,
+  zoomStyle: _propTypes2.default.string,
+  zoomLensStyle: _propTypes2.default.string
 };
+
 exports.default = ReactImageZoom;
 module.exports = exports['default'];
