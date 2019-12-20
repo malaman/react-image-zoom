@@ -47,7 +47,7 @@ class ReactImageZoom extends React.Component {
 }
 
 ReactImageZoom.propTypes = {
-  width: PropTypes.number.isRequired,
+  width: PropTypes.number,
   img: PropTypes.string,
   height: PropTypes.number,
   zoomWidth: PropTypes.number,
@@ -55,6 +55,7 @@ ReactImageZoom.propTypes = {
   offset: PropTypes.object,
   zoomStyle: PropTypes.string,
   zoomLensStyle: PropTypes.string,
+  zoomPosition: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'original'])
 };
 
 export default ReactImageZoom;
