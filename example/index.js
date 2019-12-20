@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ReactImageZoom from '../src/react-image-zoom';
+import {Container} from './components/container/Container';
+
 import './css/main.scss';
 
 const props1 = {
@@ -58,6 +60,7 @@ class ReactImageZoomExample extends Component {
   render() {
     return (
       <div>
+        <Container />
         <div>
           <h2>{`props: ${JSON.stringify(this.state.zoomProps)}`}</h2>
           <div style={{display: 'flex', marginBottom: 10}}>
