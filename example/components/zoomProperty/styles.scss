@@ -1,0 +1,12 @@
+.zoom_property {
+  display: flex;
+  flex-direction: column;
+  &__key {
+    font-weight: bold;
+  }
+  &__value {
+    display: flex;
+    margin-bottom: 2px;
+    align-items: center;
+  }
+}

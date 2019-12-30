@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: row;
+
+  &__options {
+    padding: 5px;
+    margin: 5px;
+    border: solid 1px black;
+    flex: none;
+    width: 200px;
+  }
+
+  &__used_props {
+    padding: 5px;
+    margin: 5px;
+    border: solid 1px black;
+    display: block;
+    flex: none;
+    width: 200px;
+  }
+  &__used_props_caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__zoomed_image {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+  }
+}
