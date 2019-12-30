@@ -33,7 +33,7 @@ export function Container() {
           {Object.keys(state).map(key => <Option key={key} name={key} options={state[key]}/>)}
         </div>
         <div className='container__used_props'>
-        <div>Used props:</div>
+        <div className='container__used_props_caption'>Used props:</div>
         {Object
           .keys(zoomProps)
           .map(key => <ZoomProperty key={key} name={key} value={zoomProps[key].toString()}/>)

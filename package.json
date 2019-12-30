@@ -57,12 +57,12 @@
     "build": "npm run build-babel && npm run build-dist-dev && npm run build-dist-prod",
     "build-dist-dev": "NODE_ENV=development webpack --config webpack.config --colors",
     "build-dist-prod": "NODE_ENV=production webpack --config webpack.config --progress --colors -p",
-    "build-example": "browserify ./example/index.js -t [ babelify --presets [ es2015 stage-0 react ] --plugins [ transform-object-assign ] ] | uglifyjs -cm > ./example/bundle.min.js",
+    "build-example": "NODE_ENV=production webpack --config webpack.config.dev --progress --colors -p",
     "build-babel": "babel ./src/react-image-zoom.js --out-file index.js",
     "lint": "eslint ./src",
     "lint-dev": "eslint --fix ./src",
     "test": "jest test",
-    "webpack:watch": "webpack-dev-server --config webpack.config.dev.js --devtool eval --progress"
+    "watch-example": "webpack-dev-server --config webpack.config.dev.js --devtool eval --progress"
   },
   "bugs": {
     "url": "https://github.com/malaman/react-image-zoom/issues"

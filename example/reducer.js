@@ -2,9 +2,9 @@ import React from 'react';
 
 export const initialState = {
   'width': {
-    '300': {value: 300, checked: true},
-    '400': {value: 400, checked: false},
+    '400': {value: 400, checked: true},
     '500': {value: 500, checked: false},
+    '600': {value: 600, checked: false},
   },
   'scale': {
     'default': {value: 'default', checked: true},

@@ -15,7 +15,7 @@ module.exports = {
         disableHostCheck: true,
     },
     output: {
-        path: path.join(__dirname, './assets/dist/'),
+        path: path.join(__dirname, './example/'),
         filename: 'bundle.js',
         publicPath: '/web-assets/dist/'
     },
