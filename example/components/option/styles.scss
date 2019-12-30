@@ -1,0 +1,16 @@
+.option {
+  display: flex;
+  flex-direction: column;
+  &__name {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  &__property {
+    display: flex;
+    margin-bottom: 2px;
+    align-items: center;
+  }
+  &__property_caption {
+    margin-left: 5px;
+  }
+}
