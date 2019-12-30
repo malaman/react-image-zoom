@@ -89,14 +89,15 @@ var ReactImageZoom = function (_React$Component) {
 }(_react2.default.Component);
 
 ReactImageZoom.propTypes = {
-  width: _propTypes2.default.number.isRequired,
+  width: _propTypes2.default.number,
   img: _propTypes2.default.string,
   height: _propTypes2.default.number,
   zoomWidth: _propTypes2.default.number,
   scale: _propTypes2.default.number,
   offset: _propTypes2.default.object,
   zoomStyle: _propTypes2.default.string,
-  zoomLensStyle: _propTypes2.default.string
+  zoomLensStyle: _propTypes2.default.string,
+  zoomPosition: _propTypes2.default.oneOf(['top', 'left', 'bottom', 'right', 'original'])
 };
 
 exports.default = ReactImageZoom;
