@@ -11,17 +11,13 @@ const outputFileName = env === 'production' ?
   'react-image-zoom.min.js' :
   'react-image-zoom.js';
 
-if (env === 'production') {
-  pluginsList.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {warnings: false},
-      output: {comments: false},
-    }),
-  );
-}
-
 const config = {
   entry: path.join(__dirname, 'src/react-image-zoom.js'),
+
+  optimization: {
+    minimize: env === 'production'
+  },
+
 
   output: {
     path: path.join(__dirname, 'dist'),
@@ -43,11 +39,11 @@ const config = {
   plugins: pluginsList,
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        use: ['babel-loader'],
       }],
   },
 };
