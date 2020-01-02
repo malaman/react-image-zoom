@@ -26,23 +26,30 @@ export function Container() {
   });
   zoomProps.img = '1.jpg';
   Object.keys(zoomProps).forEach(key => zoomProps[key] === 'default' ? delete zoomProps[key] : null);
+  zoomProps.height = Math.trunc(zoomProps.width  * 0.75);
+  console.log(zoomProps);
   return (
     <StoreContext.Provider value={{ state, dispatch }}>
-      <div className='container'>
-        <div className='container__options'>
-          {Object.keys(state).map(key => <Option key={key} name={key} options={state[key]}/>)}
-        </div>
-        <div className='container__used_props'>
-        <div className='container__used_props_caption'>Used props:</div>
-        {Object
-          .keys(zoomProps)
-          .map(key => <ZoomProperty key={key} name={key} value={zoomProps[key].toString()}/>)
-        }
-        </div>
-        <div className='container__zoomed_image'>
-          <ReactImageZoom ref={refContainer} {...zoomProps} />
+      <div className='test'>
+        <div className='container'>
+          <div className='container__options'>
+            {Object.keys(state).map(key => <Option key={key} name={key} options={state[key]}/>)}
+          </div>
+          <div className='container__used_props'>
+            <div className='container__used_props_caption'>Used props:</div>
+            {Object
+              .keys(zoomProps)
+              .map(key => <ZoomProperty key={key} name={key} value={zoomProps[key].toString()}/>)
+            }
+          </div>
+          <div className='container__zoomed_image'>
+            <div className='container__zoomed_image_content'>
+              <ReactImageZoom ref={refContainer} {...zoomProps} />
+            </div>
+          </div>
         </div>
       </div>
+
     </StoreContext.Provider>
   );
 
