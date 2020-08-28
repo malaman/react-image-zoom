@@ -26,7 +26,7 @@ class ReactImageZoom extends React.Component {
   }
 
   rerenderImageZoom(props) {
-    this.imageZoom = new ImageZoom(this.container, JSON.parse(JSON.stringify(props)));
+    this.imageZoom = new ImageZoom(this.container, {...this.props});
   }
 
   setup() {
